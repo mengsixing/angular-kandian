@@ -1,0 +1,47 @@
+:host ::ng-deep .ant-carousel .slick-slide {
+  text-align: center;
+  height: 160px;
+  line-height: 160px;
+  background: #364d79;
+  color: #fff;
+  overflow: hidden;
+}
+
+h3 {
+  color: #fff;
+}
+
+:host ::ng-deep .ant-tabs-bar {
+  margin-bottom: 0;
+}
+
+
+.news-list_item {
+  display: flex;
+  padding: 7px 15px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.news-list_item_img{
+  width: 90px;
+  height: 70px;
+}
+
+.news-list_item_img>img{
+  width: 90px;
+  height: 70px;
+}
+
+.news-list_item_info {
+  margin-left: 15px;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between
+}
+
+.news-list_item_info_read {
+}

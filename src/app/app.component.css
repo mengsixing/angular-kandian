@@ -1,0 +1,16 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+.footer >a{
+  display: inline-block;
+  width: 50%;
+}
