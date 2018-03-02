@@ -35,6 +35,7 @@ h3 {
 }
 
 .news-list_item_info {
+  width: 100%;
   margin-left: 15px;
   height: 100%;
   position: relative;

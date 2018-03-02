@@ -1,5 +1,6 @@
+<app-header title="首页"></app-header>
 <nz-tabset>
-  <nz-tab *ngFor="let tab of tabs">
+  <nz-tab *ngFor="let tab of tagList">
     <ng-template #nzTabHeading>
       {{tab.name}}
     </ng-template>
@@ -8,17 +9,19 @@
 </nz-tabset>
 <div style="height:160px">
     <nz-carousel nzAutoPlay>
-        <div nz-carousel-content *ngFor="let index of array"><h3>{{index}}</h3></div>
+        <div nz-carousel-content *ngFor="let banner of bannerList">
+          <img src="{{banner.pic}}" alt="img" style="height:100%;width:100%;">
+        </div>
       </nz-carousel>
 </div>
 <div class="news-list">
   <div class="news-list_item" *ngFor="let item of newsList">
     <div class="news-list_item_img">
-        <img src="{{item.cover}}" alt="{{item.title}}">
+        <img src="{{item.litpic.includes('http') ? item.litpic : 'http://211.149.160.35' + item.litpic}}" alt="{{item.title}}">
     </div>
     <div class="news-list_item_info">
       <div>{{item.title}}</div>
-      <div>阅读数: {{item.read}}</div>
+      <div>阅读数: {{item.click}}</div>
     </div>
   </div>
 </div>
