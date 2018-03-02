@@ -1,3 +1,14 @@
-<p>
-  my works!
-</p>
+<app-header title="我的"></app-header>
+<div class="my">
+  <div class="my-content">
+    <i class="anticon anticon-exclamation-circle"></i>
+  </div>
+  <div class="my-info">温馨提示</div>
+  <div class="my-read">
+    <div>阅读数：</div>
+    <div>{{readNumber}}</div>
+  </div>
+  <button class="my-btn" nz-button [nzType]="'primary'" (click)="addOne.bind(this)()">
+    <span>手动+1</span>
+  </button>
+</div>

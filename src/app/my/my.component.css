@@ -1,0 +1,25 @@
+.my{
+  padding: 0 15px;
+}
+.my-content {
+  text-align: center;
+  font-size: 40px;
+  padding-top: 60px;
+  color: #38f;
+}
+.my-info {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.my-read{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.my-btn{
+  margin-top: 20px;
+  width: 100%;
+}

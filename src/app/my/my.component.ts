@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my.component.css']
 })
 export class MyComponent implements OnInit {
-
+  readNumber=176
   constructor() { }
 
   ngOnInit() {
+  }
+  addOne(){
+    this.readNumber++;
   }
 
 }
