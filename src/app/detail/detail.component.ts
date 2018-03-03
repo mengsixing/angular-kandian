@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-detail',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailComponent implements OnInit {
   title="title"
-  constructor() { }
+  constructor(private route: ActivatedRoute,) { }
 
   ngOnInit() {
+    const id = +this.route.snapshot.paramMap.get('id');
+    console.log('获取的id是：',id);
   }
 
 }

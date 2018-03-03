@@ -19,7 +19,7 @@
       </div>
 
       <div class="news-list" *ngIf="newsList.length>0">
-        <div class="news-list_item" *ngFor="let item of newsList">
+        <div class="news-list_item" *ngFor="let item of newsList" (click)="gotoDetail(item)">
           <div class="news-list_item_img">
               <img src="{{item.litpic.includes('http') ? item.litpic : 'http://211.149.160.35' + item.litpic}}" alt="{{item.title}}">
           </div>

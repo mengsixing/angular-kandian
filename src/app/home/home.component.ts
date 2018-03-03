@@ -2,6 +2,8 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 // import BScroll from '../../../node_modules/better-scroll/src/'
 import BScroll from '../../../node_modules/better-scroll/src'
 
+import { Router } from '@angular/router';
+
 import { HomeService } from '../home.service';
 
 @Component({
@@ -21,7 +23,7 @@ export class HomeComponent implements OnInit {
   newsList = [];
   bScroll;
 
-  constructor(private homeService: HomeService, private elementRef: ElementRef) {
+  constructor(private homeService: HomeService, private elementRef: ElementRef,private router: Router) {
   }
 
   ngOnInit() {
@@ -84,5 +86,11 @@ export class HomeComponent implements OnInit {
   changeTabs(tag){
     this.pageIndex=0;
     this.getNewsList(tag.id,0,true);
+  }
+  gotoDetail(item){
+    //console.log(item);
+    var route='detail/'+item.id;
+    this.router.navigate([route]);
+    //console.log(this.router);
   }
 }

@@ -16,7 +16,7 @@ import { HomeService } from './home.service';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'detail:id', component: DetailComponent },
+  { path: 'detail/:id', component: DetailComponent },
   { path: 'my', component: MyComponent },
   { path: '**', component: NotfoundComponent }
 ];
