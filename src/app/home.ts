@@ -52,3 +52,8 @@ export class NewsList {
 //   cate_name:string;
 //   cate_price:string;
 // }
+
+
+export class NewsDetail{
+  data:any
+}

@@ -13,6 +13,7 @@ import { DetailComponent } from './detail/detail.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeService } from './home.service';
+import { DetailService } from './detail.service';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -40,7 +41,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     NgZorroAntdModule.forRoot()
   ],
-  providers: [HomeService],
+  providers: [HomeService,DetailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
