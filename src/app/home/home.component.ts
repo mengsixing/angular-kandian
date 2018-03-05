@@ -1,10 +1,14 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
-// import BScroll from '../../../node_modules/better-scroll/src/'
 import BScroll from '../../../node_modules/better-scroll/src'
+
+import { Store } from '@ngrx/store';
+import { INCREMENT } from '../counter';
 
 import { Router } from '@angular/router';
 
 import { HomeService } from './home.service';
+
+import { AppState } from '../appType'
 
 @Component({
   selector: 'app-home',
@@ -13,17 +17,22 @@ import { HomeService } from './home.service';
 })
 export class HomeComponent implements OnInit {
   tagList = [{
-    id:1,
-    name:''
+    id: 1,
+    name: ''
   }];
   cid = 0;
   offset = 0;
-  pageIndex=0;
+  pageIndex = 0;
   bannerList = [];
   newsList = [];
   bScroll;
 
-  constructor(private homeService: HomeService, private elementRef: ElementRef,private router: Router) {
+  constructor(
+    private homeService: HomeService,
+    private elementRef: ElementRef,
+    private router: Router,
+    private store: Store<AppState>
+  ) {
   }
 
   ngOnInit() {
@@ -33,7 +42,7 @@ export class HomeComponent implements OnInit {
     //this.getNewsList();
     var that = this;
     let divEle = that.elementRef.nativeElement.querySelector('#newsListWrapper');
-    setTimeout(()=>{
+    setTimeout(() => {
       this.bScroll = new BScroll(divEle, {
         click: true,
         scrollbar: {
@@ -43,13 +52,13 @@ export class HomeComponent implements OnInit {
       });
       this.bScroll.on("scrollEnd", function () {
         if (that.bScroll.maxScrollY === that.bScroll.y) {
-            //获取选中的标签id
-            let tagId = that.cid;
-            let offset = that.pageIndex * 10;
-            that.getNewsList(tagId,offset,false);
+          //获取选中的标签id
+          let tagId = that.cid;
+          let offset = that.pageIndex * 10;
+          that.getNewsList(tagId, offset, false);
         }
       })
-    },1000)
+    }, 1000)
 
   }
 
@@ -63,11 +72,11 @@ export class HomeComponent implements OnInit {
       this.bannerList = data.data;
     });
   }
-  getNewsList(cid, offset,empty) {
+  getNewsList(cid, offset, empty) {
     return this.homeService.getNewsList(cid, offset).subscribe(data => {
-      if(empty){
+      if (empty) {
         this.newsList = data.data.dataList;
-      }else{
+      } else {
         this.newsList = this.newsList.concat(data.data.dataList);
       }
       this.pageIndex++;
@@ -79,15 +88,16 @@ export class HomeComponent implements OnInit {
     this.homeService.getTags().subscribe((data) => {
       this.tagList = data.data;
       this.cid = this.tagList[0].id
-      this.getNewsList(this.cid, 0,false);
+      this.getNewsList(this.cid, 0, false);
     });
   }
-  changeTabs(tag){
-    this.pageIndex=0;
-    this.getNewsList(tag.id,0,true);
+  changeTabs(tag) {
+    this.pageIndex = 0;
+    this.getNewsList(tag.id, 0, true);
   }
-  gotoDetail(item){
-    var route='detail/'+item.id;
+  gotoDetail(item) {
+    this.store.dispatch({ type: INCREMENT });
+    var route = 'detail/' + item.id;
     this.router.navigate([route]);
   }
 }

@@ -1,8 +1,8 @@
-import { Component, OnInit,ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import {Base64} from 'js-base64';
+import { Base64 } from 'js-base64';
 import { DomSanitizer } from '@angular/platform-browser';
 import BScroll from '../../../node_modules/better-scroll/src'
 
@@ -15,15 +15,15 @@ import { DetailService } from './detail.service';
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
-  newsDetail={};
+  newsDetail = {};
   bScroll;
   constructor(
     private route: ActivatedRoute,
     private detailService: DetailService,
-    public sanitizer:DomSanitizer,
+    public sanitizer: DomSanitizer,
     private elementRef: ElementRef,
     private location: Location) {
-   }
+  }
 
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
@@ -31,7 +31,7 @@ export class DetailComponent implements OnInit {
 
     var that = this;
     let divEle = that.elementRef.nativeElement.querySelector('.detail-news');
-    setTimeout(()=>{
+    setTimeout(() => {
       this.bScroll = new BScroll(divEle, {
         click: true,
         scrollbar: {
@@ -39,17 +39,17 @@ export class DetailComponent implements OnInit {
           interactive: false
         }
       });
-    },1000)
+    }, 1000)
   }
 
-  getNewsDetail(id){
-    return this.detailService.getDetail(id).subscribe((data)=>{
-        data.data.content= this.sanitizer.bypassSecurityTrustHtml(Base64.decode(data.data.content));//
-        this.newsDetail=data.data
+  getNewsDetail(id) {
+    return this.detailService.getDetail(id).subscribe((data) => {
+      data.data.content = this.sanitizer.bypassSecurityTrustHtml(Base64.decode(data.data.content));//
+      this.newsDetail = data.data
     });
   }
 
-  goback():void{
+  goback(): void {
     this.location.back();
   }
 

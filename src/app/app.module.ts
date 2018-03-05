@@ -4,6 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { HttpClientModule } from '@angular/common/http';
 
+import * as xxx from '@ngrx/store';
+import { counterReducer } from './counter';
+
 
 
 import { AppComponent } from './app.component';
@@ -39,9 +42,10 @@ const appRoutes: Routes = [
     ),
     BrowserModule,
     HttpClientModule,
-    NgZorroAntdModule.forRoot()
+    NgZorroAntdModule.forRoot(),
+    xxx.StoreModule.forRoot({ counter: counterReducer })
   ],
-  providers: [HomeService,DetailService],
+  providers: [HomeService, DetailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -58,3 +58,7 @@ export class NewsList {
 export class NewsDetail{
   data:any
 }
+
+export interface AppState {
+  counter: number;
+}
