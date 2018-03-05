@@ -54,7 +54,6 @@ export class HomeComponent implements OnInit {
   }
 
   getTags() {
-    // const id = +this.route.snapshot.paramMap.get('id');
     return this.homeService.getTags().subscribe((data) => {
       this.tagList = data.data;
     });
@@ -88,9 +87,7 @@ export class HomeComponent implements OnInit {
     this.getNewsList(tag.id,0,true);
   }
   gotoDetail(item){
-    //console.log(item);
     var route='detail/'+item.id;
     this.router.navigate([route]);
-    //console.log(this.router);
   }
 }

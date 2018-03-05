@@ -1,3 +1,40 @@
-<div class="header">
-{{title}}
+<div class="detail">
+  <div class="detail-header">
+    <span (click)="goback()"> &lt;&nbsp;返回</span>
+  </div>
+  <div class="detail-news" ref="listWrapper">
+      <div class="scroller">
+          <div class="detail-news-body">
+              <div class="detail-news-cover">
+                  <img src="{{newsDetail.litpic}}" alt="img" />
+              </div>
+              <div class="detail-news-content">
+                  <div class="detail-news-tag">
+                    {{newsDetail.cate_name}}
+                  </div>
+                  <div class="detail-news-title">
+                    {{newsDetail.title}}
+                  </div>
+                  <div class="detail-news-tags">
+                      <span class="detail-news-tags-from">
+                      </span>
+                      <span>
+                          <span class="detail-news-tags-price">
+                            {{newsDetail.price}}
+                              K币
+                      </span>
+                          <span class="detail-news-tags-read">
+                              阅读：{{newsDetail.click}}
+                          </span>
+                      </span>
+                  </div>
+                  <div class="detail-news-content-text">
+                      <p [innerHTML]="newsDetail.content">
+
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
