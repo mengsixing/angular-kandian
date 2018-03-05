@@ -19,6 +19,7 @@ import { HomeService } from './home/home.service';
 import { DetailService } from './detail/detail.service';
 
 const appRoutes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'detail/:id', component: DetailComponent },
   { path: 'my', component: MyComponent },

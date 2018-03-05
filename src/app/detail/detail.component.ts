@@ -15,7 +15,7 @@ import { DetailService } from './detail.service';
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
-  newsDetail = {};
+  newsDetail
   bScroll;
   constructor(
     private route: ActivatedRoute,
