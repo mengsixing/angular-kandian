@@ -6,8 +6,6 @@
 * [react版](https://github.com/yhlben/react-kandian)
 * [vue版](https://github.com/yhlben/vue-kandian)
 
----
-
 ## 技术结构
 
 - angular5
@@ -22,6 +20,6 @@
 ## 运行方式:
 
 - npm install
-- npm install @angular-cli -g
+- npm install -g @angular/cli
 - ng serve
   
