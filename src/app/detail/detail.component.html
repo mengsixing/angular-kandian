@@ -3,10 +3,10 @@
     <span (click)="goback()"> &lt;&nbsp;返回</span>
   </div>
   <div class="detail-news" ref="listWrapper">
-      <div class="scroller">
+      <div class="scroller"  *ngIf="newsDetail">
           <div class="detail-news-body">
               <div class="detail-news-cover">
-                  <img src="{{newsDetail.litpic}}" alt="img" />
+                  <img [src]="newsDetail.litpic" alt="img" />
               </div>
               <div class="detail-news-content">
                   <div class="detail-news-tag">
@@ -30,7 +30,6 @@
                   </div>
                   <div class="detail-news-content-text">
                       <p [innerHTML]="newsDetail.content">
-
                       </p>
                   </div>
               </div>
