@@ -17,9 +17,15 @@
 
 - angular-cli
 
-## 运行方式:
+## 运行方式
+
+### yarn启动
+
+- yarn install
+- yarn run start  
+
+### npm启动
 
 - npm install
-- npm install -g @angular/cli
-- ng serve
+- npm run start
   
