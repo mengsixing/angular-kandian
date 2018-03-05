@@ -12,8 +12,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { DetailComponent } from './detail/detail.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
-import { HomeService } from './home.service';
-import { DetailService } from './detail.service';
+import { HomeService } from './home/home.service';
+import { DetailService } from './detail/detail.service';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },

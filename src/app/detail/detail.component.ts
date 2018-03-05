@@ -6,7 +6,7 @@ import {Base64} from 'js-base64';
 import { DomSanitizer } from '@angular/platform-browser';
 import BScroll from '../../../node_modules/better-scroll/src'
 
-import { DetailService } from '../detail.service';
+import { DetailService } from './detail.service';
 
 
 @Component({

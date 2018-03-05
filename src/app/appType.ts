@@ -1,3 +1,4 @@
+//预定义数据返回格式
 export class TagList {
   data:Array<any>
 }

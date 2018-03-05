@@ -4,7 +4,7 @@ import BScroll from '../../../node_modules/better-scroll/src'
 
 import { Router } from '@angular/router';
 
-import { HomeService } from '../home.service';
+import { HomeService } from './home.service';
 
 @Component({
   selector: 'app-home',

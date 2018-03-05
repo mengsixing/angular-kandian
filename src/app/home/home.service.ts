@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import {TagList,BannerList,NewsList} from './home'
+import {TagList,BannerList,NewsList} from '../appType'
 
 @Injectable()
 export class HomeService {

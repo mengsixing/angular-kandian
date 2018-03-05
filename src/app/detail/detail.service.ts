@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { NewsDetail } from "./home";
+import { NewsDetail } from "../appType";
 
 @Injectable()
 export class DetailService {
