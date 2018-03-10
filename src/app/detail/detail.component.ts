@@ -44,7 +44,8 @@ export class DetailComponent implements OnInit {
 
   getNewsDetail(id) {
     return this.detailService.getDetail(id).subscribe((data) => {
-      data.data.content = this.sanitizer.bypassSecurityTrustHtml(Base64.decode(data.data.content));//
+      var html=Base64.decode(data.data.content).replace(/\/Uploads\/images/g,'http://211.149.160.35/Uploads/images');
+      data.data.content = this.sanitizer.bypassSecurityTrustHtml(html);
       this.newsDetail = data.data
     });
   }
