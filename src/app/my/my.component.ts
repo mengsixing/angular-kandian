@@ -9,7 +9,7 @@ import { AppState } from '../appType'
   templateUrl: './my.component.html',
   styleUrls: ['./my.component.css']
 })
-export class MyComponent implements OnInit {
+export class MyComponent {
   readNumber
   constructor(private store: Store<AppState>) {
     this.store.subscribe((state) => {
@@ -17,8 +17,6 @@ export class MyComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-  }
   addOne() {
     this.store.dispatch({ type: INCREMENT })
   }
