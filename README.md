@@ -1,5 +1,7 @@
 # angular-kandian 
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/yhlben/angular-kandian.svg)](https://greenkeeper.io/)
+
 一个简易的新闻站点
 
 * [演示地址](http://yinhengli.com)
